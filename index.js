@@ -13,12 +13,7 @@ mongoose.connect(`mongodb+srv://${process.env.DB_PASSWORD}@dojodream.uy37p2i.mon
 
 const app = express()
 
-app.use(cors(
-    {
-        origin: 'http://localhost:3000',
-        credentials: true
-    }
-))
+app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
 
