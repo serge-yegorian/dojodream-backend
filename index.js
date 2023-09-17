@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import dotenv from 'dotenv';
 import { coachRouter } from './routes/coaches.js';
 dotenv.config(); 
+const port = process.env.PORT || 4000
 
 mongoose.connect(`mongodb+srv://${process.env.DB_PASSWORD}@dojodream.uy37p2i.mongodb.net/?retryWrites=true&w=majority`)
 
