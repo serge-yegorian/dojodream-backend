@@ -7,6 +7,7 @@ const router = express.Router()
 
 //create gym
 router.post('/creategym', (req, res) => {
+    console.log(req.body)
     const newGym = new GymModel(req.body)
     newGym
     .save()
@@ -70,6 +71,8 @@ router.post('/find', async (req, res) => {
 
 // update logo
 router.post('/uploadLogo', upload.single("logo"), (req, res) => {
+    console.log(req.file);
+    console.log(req.body);
     const logo = req.file;
     const gymAddress = req.body.gymAddress;
     const publicId = req.body.logoPublicId; // for deleting

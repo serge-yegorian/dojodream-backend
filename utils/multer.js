@@ -2,7 +2,6 @@ import multer from "multer";
 import path from 'path';
 
 const upload = multer({
-    limits: {fileSize: 1000000},
     storage: multer.diskStorage({}),
     fileFilter: (req, file, cb) => {
         let ext = path.extname(file.originalname);
