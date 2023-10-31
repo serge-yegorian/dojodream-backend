@@ -7,7 +7,6 @@ const router = express.Router()
 
 //create gym
 router.post('/creategym', (req, res) => {
-    console.log(req.body)
     const newGym = new GymModel(req.body)
     newGym
     .save()
@@ -69,7 +68,7 @@ router.post('/find', async (req, res) => {
     }
 });
 
-// update logo
+// update/upload logo
 router.post('/uploadLogo', upload.single("logo"), (req, res) => {
     console.log(req.file);
     console.log(req.body);
@@ -104,7 +103,7 @@ router.post('/uploadLogo', upload.single("logo"), (req, res) => {
     });
 });
 
-// update background
+// update/upload background
 router.post('/uploadBackground', upload.single("background"), (req, res) => {
     const background = req.file;
     const gymAddress = req.body.gymAddress;
@@ -137,7 +136,7 @@ router.post('/uploadBackground', upload.single("background"), (req, res) => {
     });
 });
 
-// update schedule
+// update/upload schedule
 router.post('/uploadSchedule', upload.single("schedule"), (req, res) => {
     const schedule = req.file;
     const gymAddress = req.body.gymAddress;

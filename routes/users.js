@@ -10,7 +10,6 @@ const secret = 'h107serge087xxb!nsdnumber1';
 //login
 router.post('/login', (req, res) => {
     const { username, password } = req.body;
-    
     UserModel.findOne({ username })
         .then((user) => {
             // check if there is a user
@@ -28,7 +27,7 @@ router.post('/login', (req, res) => {
                 });
             } else {
                 // error if not okay
-                res.status(401).json({ error: 'Wrong password' });
+                res.status(402).json({ error: 'Wrong password' });
             }
         })
         .catch((err) => {
