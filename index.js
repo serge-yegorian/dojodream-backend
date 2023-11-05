@@ -14,10 +14,10 @@ mongoose.connect(`mongodb+srv://${process.env.DB_PASSWORD}@dojodream.uy37p2i.mon
 const app = express()
 
 const corsOptions = {
-    origin: ['https://magenta-toffee-1e4e9d.netlify.app/', 'https://dojodream.com']
+    origin: ['http://localhost:3000', 'https://magenta-toffee-1e4e9d.netlify.app/', 'https://dojodream.com']
   };
   
-  app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 app.use(express.json())
 app.use(cookieParser())
 
