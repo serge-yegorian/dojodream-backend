@@ -7,11 +7,13 @@ const router = express.Router()
 
 //create gym
 router.post('/creategym', (req, res) => {
+    console.log(req.body)
     const newGym = new GymModel(req.body)
     newGym
     .save()
     .then((gym)=>{
         console.log(gym)
+        console.log('gym is added!!!!!')
         res.json(gym)
     })
     .catch(() => {
