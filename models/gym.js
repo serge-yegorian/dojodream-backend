@@ -37,8 +37,9 @@ const GymSchema = new mongoose.Schema({
     facebook: {type: String, required: false},
     tapology: {type: String, required: false},
     smoothcomp: {type: String, required: false},
-    membershipStart: {type: String, required: false},
-    dropIn: {type: String, required: false},
+    membership: {type: String, required: true},
+    period: {type: String, required: true},
+    dropin: {type: String, required: true},
     gymOwner: {type: mongoose.Schema.Types.ObjectId, ref: "User", required: true},
     coaches: [{
         type: mongoose.Schema.Types.ObjectId,
